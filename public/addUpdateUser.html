@@ -1,0 +1,38 @@
+
+      <form name="form" >
+            <div class="container" ng-init = "vm.getUserById()" >
+              <h1>Employee Registration</h1>
+              
+              <a class="btn btn-success" href="#!/display">Display Employee List</a>
+              
+              <p>Enter Employee Details</p>
+              <hr>
+              <div class="form-group">
+              <label for="name"><b>Name</b></label>
+              <input type="text" placeholder="Enter Name"  class="form-control"  name="name"  ng-model="vm.userObj.name" required>
+              </div>
+          
+              <div class="form-group">
+              <label for="email"><b>Email</b></label>
+              <input type="text" placeholder="Enter Email"  class="form-control"  name="Email" ng-model="vm.userObj.email" required>
+              </div>
+    
+              <div class="form-group">
+              <label for="phone"><b>Phone</b></label>
+              <input type="text" placeholder="Enter Phone Number"  class="form-control"  name="Phone" ng-model="vm.userObj.phone" required>
+              </div>
+    
+              <div class="form-group">
+              <label for="address"><b>Address</b></label>
+              <input type="text" placeholder="Enter Address"  class="form-control"  name="Address" ng-model="vm.userObj.address" required>
+              </div>
+    
+              <div class="form-group">
+              <label for="salary"><b>Salary</b></label>
+              <input type="text" placeholder="Enter Salary"  class="form-control"  name="Salary" ng-model="vm.userObj.salary"required>
+              </div>
+              <hr>
+          
+              <button type="submit" class="registerbtn" ng-click="vm.addUser(vm.userObj)">Submit</button>
+            </div>
+          </form>

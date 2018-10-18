@@ -1,0 +1,56 @@
+<style>
+
+#searchBox{
+    width: 500px;
+    height: 50px;
+    margin: 30px;
+}    
+#employee {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#employee td, #employee th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#employee tr:nth-child(even){background-color: #f2f2f2;}
+
+#employee tr:hover {background-color: #ddd;}
+
+#employee th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+</style>
+
+<div ng-controller="userController" >
+    <div class="container" ng-init="vm.getUsers()">
+        <label for="name"><b>Enter Name</b></label>
+        <input type="text" id="searchBox"><button type="submit" class="btn" ng-click="vm.getUsers()" >Search</button>
+        <a class="btn btn-success" href="#!/display/addUpdateUser.html">Add Employee</a>
+        <table id="employee">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Salary</th>
+                <th>Edit/Delete</th>
+            </tr>
+            <tr ng-repeat="user in vm.users.data ">
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.phone}}</td>
+                <td>{{user.address}}</td>
+                <td>{{user.salary}}</td>
+                <td><a href="#!/display/{{user._id}}">Edit</a> &nbsp;&nbsp; <a href="" ng-click="vm.deleteUser(user._id)">Delete</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
